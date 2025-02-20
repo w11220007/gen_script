@@ -1,7 +1,5 @@
 import json
 import os
-#from dotenv import load_dotenv
-from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from app.core.settings import settings
@@ -92,7 +90,7 @@ def main():
     output_path = os.path.join(settings.media_dir_static, output_file)
 
     # Lưu dữ liệu
-    save_output(generated_questions, output_format, output_path)
+    save_output_lesson_plan(generated_questions, output_format, output_path)
     print(f"File saved at: {output_path}")
 
 # Hàm giả định format_questions_to_json (nếu cần)

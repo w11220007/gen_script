@@ -31,6 +31,7 @@ fpdf = "^1.7.2"
 python-docx = "^1.1.2"
 python-pptx = "^1.0.2"
 pypdf = "^5.1.0"
+openai = "^1.63.2"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -4,9 +4,10 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip install beautifulsoup4
-
+RUN pip install pymupdf
 RUN pip install poetry==1.8.2
-
+RUN pip install --no-cache-dir nltk
+RUN pip install --no-cache-dir scikit-learn==1.3.0
 # Configuring poetry
 RUN poetry config virtualenvs.create false
 RUN poetry config cache-dir /tmp/poetry_cache

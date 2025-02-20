@@ -1,14 +1,15 @@
 import fitz  # PyMuPDF
 import json
 import os
+
+import openai
 from langchain_google_genai import ChatGoogleGenerativeAI
 from app.core.settings import settings
 from langchain.prompts import PromptTemplate
 import re
-
+from openai import OpenAI
 # Cấu hình Google Generative AI (Gemini)
 os.environ["GOOGLE_API_KEY"] = settings.gemini_api_key
-
 # Danh sách các script types, frameworks, tones
 SCRIPT_TYPES = {
     "Product Highlights": ["sản phẩm", "tính năng", "đặc điểm", "ưu điểm", "công nghệ"],
@@ -101,13 +102,10 @@ def analyze_text(text):
             max_retries=3,
         )
         prompt_text = prompt.format(text=text)
-        # Chuyển thành chuỗi
-        #print(f"abc: {prompt_text}")
         response = llm.invoke(prompt_text)
         response_text = response.content.strip()
         response_text = re.sub(r"```json|```", "", response_text, flags=re.DOTALL).strip()
-        #print("Process response:")
-        #print(response_text)
+
         try:
             result = json.loads(response_text)
             return result
@@ -132,20 +130,23 @@ def process_tvc_script(company_name, text):
         prompt = PromptTemplate(
             input_variables=["text", "script_type", "framework", "tone",
                              "customer_segment"],
-            template="""
-            Bạn là chuyên gia sáng tạo quảng cáo. Viết một kịch bản TVC dựa trên nội dung sau:
-            {text}
+                    template="""
+                    Bạn là chuyên gia sáng tạo quảng cáo. Viết một kịch bản voice TVC khoảng 25s dựa trên nội dung sau:
+        {text}
 
-            Thông tin kịch bản:
-            - 🏷 **Loại kịch bản**: {script_type}
-            - 📜 **Framework**: {framework}
-            - 🎭 **Tone**: {tone}
-            - 🎯 **Tệp khách hàng**: {customer_segment}
+        Thông tin kịch bản:
 
-            Kịch bản cần bao gồm:
-            - 🎙 ** Chỉ có lời thoại (Voice-over)** để lồng tiếng**
-            Hãy đảm bảo kịch bản thu hút, hấp dẫn, phù hợp với đối tượng khách hàng.
-            """
+        🏷 Loại kịch bản: {script_type}
+        📜 Framework: {framework}
+        🎭 Tone: {tone}
+        🎯 Tệp khách hàng: {customer_segment}
+        Yêu cầu:
+
+        Kịch bản chỉ bao gồm lời thoại của nhân vật.
+        Không bao gồm nhạc nền, không có hướng dẫn cảnh quay, mô tả giọng đọc  hay bất kỳ yếu tố mô tả nào ngoài lời thoại.
+        Lời thoại cần hấp dẫn, thu hút và phù hợp với đối tượng khách hàng mục tiêu.
+        """
+
         )
         # Bước 3: Gọi Gemini AI để sinh nội dung TVC
         llm = ChatGoogleGenerativeAI(
@@ -156,6 +157,7 @@ def process_tvc_script(company_name, text):
             timeout=30,
             max_retries=3,
         )
+
         prompt_text = prompt.format(
             company_name=company_name,
             text=text,
@@ -164,9 +166,7 @@ def process_tvc_script(company_name, text):
             tone=tone,
             customer_segment=customer_segment
         )
-
         response = llm.invoke(prompt_text)
-
         # Xử lý đầu ra từ Gemini
         script_output = response.content.strip()
 
