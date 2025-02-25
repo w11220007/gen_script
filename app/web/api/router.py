@@ -15,6 +15,7 @@ from app.repositories.generate_script_TVC import save_out_TVC, extract_text_from
 from app.repositories.Class_newsletter import generate_notification, save_output, notification_types
 from app.repositories.classroom_management import save_analysis_output, generate_analysis
 from app.repositories.email_family import save_output_email, generate_email
+from app.repositories.script_teach import save_script, gen_script, extract_text_from_docx
 from fastapi import HTTPException, Form, UploadFile, File
 from app.core.settings import settings
 import json
@@ -516,6 +517,55 @@ async def generate_email_api(
                 "message": "Email generated successfully",
                 "file": output_path,
                 "email_content": email_content
+            }
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.post("/generate_lesson_script")
+async def generate_lesson_plan(
+    file: UploadFile = File(...),
+):
+    """API nhận file DOCX hoặc PDF, tạo giáo án dựa trên nội dung."""
+    try:
+        # Đọc nội dung file
+        content = await file.read()
+        file_ext = file.filename.split(".")[-1].lower()
+
+        if file_ext == "docx":
+            import tempfile
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as temp_docx:
+                temp_docx.write(content)
+                temp_docx_path = temp_docx.name
+            text = extract_text_from_docx(temp_docx_path)
+            os.remove(temp_docx_path)
+
+        elif file_ext == "pdf":
+            import tempfile
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
+                temp_pdf.write(content)
+                temp_pdf_path = temp_pdf.name
+            text = extract_text_from_pdf(temp_pdf_path)
+            os.remove(temp_pdf_path)
+
+        else:
+            raise HTTPException(status_code=400, detail="Unsupported file format (only DOCX or PDF).")
+
+        # Gọi AI để phân tích nội dung
+        script = gen_script(text)
+
+        # Lưu kết quả vào JSON
+        output_file = f"lesson_plan.json"
+        output_path = os.path.join(settings.media_dir_static, output_file)
+        save_script(script, output_path)
+
+        return JSONResponse(
+            content={
+                "message": "Lesson plan generated successfully",
+                "file": output_path,
+                "lesson_plan": script
             }
         )
 

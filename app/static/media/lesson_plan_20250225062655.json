@@ -1,0 +1,11 @@
+{
+    "topic": "Hướng dẫn viết báo cáo dự án",
+    "Step 1": "Trang bìa: Xóa tất cả các văn bản được đánh dấu màu vàng khi bạn di chuyển qua mẫu. Điền tiêu đề dự án, số nhóm, tên người hướng dẫn và tên đầy đủ cùng mã số sinh viên của các thành viên trong nhóm.",
+    "Example": "Ví dụ:\n1. Phát triển một hệ thống quản lý thư viện trực tuyến cho phép người dùng tìm kiếm sách theo tiêu đề, tác giả và thể loại trước ngày 15/12/2024.\n2.  Hệ thống phải xử lý được ít nhất 1000 lượt truy cập đồng thời với thời gian phản hồi trung bình dưới 3 giây, được kiểm tra vào ngày 20/12/2024.\n...",
+    "Step 2": "Mục lục: Liệt kê tất cả các phần của báo cáo dự án với số trang tương ứng.",
+    "Step 3": "Giới thiệu (300-500 từ): Trình bày chủ đề theo cách hiểu của bạn để đưa ra quan điểm cá nhân về chủ đề.",
+    "Step 4": "Mục tiêu (200-300 từ): Viết 4-5 mục tiêu SMART (Cụ thể, Đo lường được, Khả thi, Liên quan, Thời gian cụ thể) phản ánh kết quả dự kiến của dự án. Mỗi mục tiêu nên được trình bày ngắn gọn trong một câu.",
+    "Complete_Example": "(Vì bài hoàn chỉnh rất dài nên chỉ đưa ra một phần giới thiệu ngắn gọn)\n**Dự án: Hệ thống quản lý thư viện - Nhóm 5**\n\n**1. Giới thiệu:**\nHệ thống quản lý thư viện đóng vai trò then chốt trong việc tổ chức và truy xuất thông tin. Dự án này nhằm phát triển một hệ thống trực tuyến giúp người dùng dễ dàng tìm kiếm, mượn trả sách và quản lý tài khoản cá nhân. Hệ thống được thiết kế thân thiện, dễ sử dụng và đáp ứng nhu cầu của một thư viện quy mô nhỏ.",
+    "Summarize": "Bài học hôm nay hướng dẫn cách viết báo cáo dự án, bao gồm các phần từ trang bìa, mục lục, giới thiệu, mục tiêu, tổng quan tài liệu, yêu cầu, lập kế hoạch, thiết kế, triển khai, kiểm thử, đánh giá và tài liệu tham khảo.  Mỗi phần đều có yêu cầu cụ thể về nội dung và độ dài. Học sinh cần tuân thủ hệ thống Harvard cho việc trích dẫn và tham khảo.",
+    "Homework": "Bài tập về nhà: Lựa chọn một dự án phần mềm đơn giản và viết phần Giới thiệu và Mục tiêu cho báo cáo dự án đó. Lưu ý áp dụng kiến thức về mục tiêu SMART đã học."
+}

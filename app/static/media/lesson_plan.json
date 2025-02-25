@@ -1,0 +1,71 @@
+{
+    "topic": "Lập dàn ý cho bài văn miêu tả cây cối",
+    "subtitle": "",
+    "Steps": [
+        {
+            "Step": "Bước 1: Giới thiệu cây",
+            "Example": [
+                {
+                    "Image": "Hình ảnh cô giáo ảo và học sinh ảo",
+                    "Dialogue": "Cô giáo: Hôm nay chúng ta sẽ học cách lập dàn ý tả cây cối. Em hãy cho cô biết em muốn tả cây gì?\nHọc sinh: Em muốn tả cây phượng trước cổng trường ạ.",
+                    "Outline": "Cây phượng vĩ trước cổng trường em."
+                },
+                {
+                    "Outline": "Cây bàng to lớn trong sân trường em."
+                },
+                {
+                    "Outline": "Cây xoài trong vườn nhà em."
+                },
+                {
+                    "Outline": "Hàng dừa xanh mát ven biển quê em."
+                }
+            ]
+        },
+        {
+            "Step": "Bước 2: Miêu tả chi tiết cây cối",
+            "Example": [
+                {
+                    "Image": "Hình ảnh cây phượng",
+                    "Outline": "- Hình dáng: Cao lớn, tán lá rộng như chiếc ô.\n- Thân cây: Xù xì, màu nâu sẫm.\n- Cành lá: Xanh um, mọc sum suê.\n- Hoa: Màu đỏ rực rỡ, nở vào mùa hè.\n- Kỷ niệm: Chơi trốn tìm dưới gốc cây."
+                },
+                {
+                    "Image": "Hình ảnh cây bàng",
+                    "Outline": "- Hình dáng: To lớn, vững chãi.\n- Thân cây: Thẳng, màu nâu xám.\n- Cành lá: Rộng, xanh mướt vào mùa xuân, đỏ rực vào mùa thu.\n- Quả: Hình tròn, nhỏ.\n- Kỷ niệm: Ngồi dưới gốc cây đọc sách."
+                },
+                {
+                    "Image": "Hình ảnh cây xoài",
+                    "Outline": "- Hình dáng: Cao vừa phải, tán lá sum suê.\n- Thân cây: Nhẵn, màu nâu.\n- Cành lá: Xanh đậm.\n- Hoa: Nhỏ, màu trắng.\n- Quả: Hình bầu dục, khi chín có màu vàng, thơm ngon.\n- Kỷ niệm: Hái xoài cùng ông bà."
+                },
+                {
+                    "Image": "Hình ảnh hàng dừa",
+                    "Outline": "- Hình dáng: Cao vút, thẳng tắp.\n- Thân cây: Gầy, màu nâu xám, có nhiều đốt.\n- Lá: Dài, xanh mướt.\n- Quả: Hình tròn, to.\n- Cảm xúc: Ngắm nhìn hàng dừa tạo cảm giác yên bình."
+                }
+            ]
+        },
+        {
+            "Step": "Bước 3: Kết bài",
+            "Example": [
+                {
+                    "Image": "Hình ảnh cô giáo ảo và học sinh ảo",
+                    "Dialogue": "Cô giáo: Em có cảm nghĩ gì về cây phượng?\nHọc sinh: Em rất yêu quý cây phượng vì nó mang lại bóng mát cho chúng em vui chơi. Cây phượng còn là một kỉ niệm đẹp của tuổi học trò.\nCô giáo: Chính xác! Cây cối còn có rất nhiều ích lợi khác nữa đấy!",
+                    "Outline": "Em rất yêu quý cây phượng. Cây phượng không chỉ che bóng mát mà còn làm đẹp cho trường em."
+                },
+                {
+                    "Outline": "Cây bàng là một phần ký ức tuổi thơ của em. Em sẽ luôn nhớ về cây bàng thân yêu."
+                },
+                {
+                    "Outline": "Cây xoài nhà em không chỉ cho quả ngọt mà còn là nơi lưu giữ những kỷ niệm gia đình ấm áp."
+                },
+                {
+                    "Outline": "Em yêu hàng dừa quê hương. Hàng dừa góp phần tạo nên vẻ đẹp thơ mộng cho quê em."
+                }
+            ]
+        },
+        {
+            "Step": "Bước 4: Thực hành",
+            "Example": "Yêu cầu học sinh chọn một loại cây và lập dàn ý miêu tả theo các bước đã học. Sử dụng tính năng dừng, tua lại video để học sinh có thể theo dõi và thực hành theo."
+        }
+    ],
+    "Summarize": "Bài học hôm nay giúp các em nắm được cách lập dàn ý cho bài văn miêu tả cây cối. Dàn ý gồm 3 phần: Mở bài (giới thiệu cây), Thân bài (miêu tả chi tiết các bộ phận của cây), Kết bài (nêu cảm nghĩ về cây).  Khi lập dàn ý cần chú ý sử dụng ngôn từ trong sáng, dễ hiểu và phù hợp với lứa tuổi. Các em hãy vận dụng những kiến thức đã học để lập dàn ý cho bài văn miêu tả cây cối mà em yêu thích nhé!",
+    "Homework": "Về nhà, các em hãy hoàn thành bài văn miêu tả cây cối mà em đã lập dàn ý trên lớp."
+}
